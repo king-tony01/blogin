@@ -34,6 +34,18 @@ export function serveType(path, res) {
         }
       });
       break;
+    case ".xml":
+      const xmlPath = join(__dirname, path);
+      contentType = "application/xml";
+      fs.readFile(xmlPath, "utf-8", (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.writeHead(200, { "Content-Type": contentType });
+          res.end(data);
+        }
+      });
+      break;
     case ".jpeg":
       const jpegPath = join(__dirname, path);
       contentType = "image/jpeg";
