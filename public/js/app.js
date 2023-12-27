@@ -1,6 +1,7 @@
 import { getArticles } from "./helper.js";
 init();
 const tabs = document.querySelectorAll(".tab");
+const scrolls = document.querySelectorAll(".scroll");
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     tabs.forEach((tab) => tab.classList.remove("active"));
@@ -22,12 +23,22 @@ tabs.forEach((tab) => {
   });
 });
 
+scrolls.forEach((scroll) => {
+  scroll.addEventListener("click", () => {
+    document
+      .querySelector(".categories")
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
+
 async function init() {
   const latestCon = document.querySelector(".latest");
   const data = await getArticles();
-  latestCon.innerHTML = data
-    .map((article) => {
-      return `<div class="latest-card">
+  latestCon.innerHTML =
+    data.length > 0
+      ? data
+          .map((article) => {
+            return `<div class="latest-card">
           <span class="category">${article.category}</span>
           <h2>
            ${article.title}
@@ -41,8 +52,9 @@ async function init() {
             </div>
           </div>
         </div>`;
-    })
-    .join(" ");
+          })
+          .join(" ")
+      : "";
 }
 
 document.querySelector(".fa-bars").addEventListener("click", () => {

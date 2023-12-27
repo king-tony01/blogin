@@ -134,6 +134,7 @@ img {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: 0.5s all;
+    margin: 0 10px;
   }
 
   .about-wrapper {

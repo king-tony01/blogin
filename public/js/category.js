@@ -38,10 +38,11 @@ hero.querySelector("p").textContent = categoryInfo.find((cat) => {
   return cat.id == category;
 }).intro;
 const data = await getAllBasedOnCategory(category);
-console.log(data);
-container.innerHTML = data
-  .map((article) => {
-    return `<div class="article-card">
+container.innerHTML =
+  data.length > 0
+    ? data
+        .map((article) => {
+          return `<div class="article-card">
           <h3>
            ${article.title}
           </h3>
@@ -72,8 +73,9 @@ container.innerHTML = data
             </div>
           </div>
         </div>`;
-  })
-  .join(" ");
+        })
+        .join(" ")
+    : "";
 
 const readBtn = document.querySelectorAll(".read-btn");
 readBtn.forEach((btn) => {

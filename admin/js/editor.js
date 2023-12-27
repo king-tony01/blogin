@@ -54,7 +54,6 @@ export function editor(page, editor) {
                 <br/>
           <br/>
           <br/>
-
               </div>
             </form>
           </section>
@@ -93,8 +92,9 @@ export function editor(page, editor) {
     const resData = await response.json();
     if (resData.stat) {
       alertWindow(resData.message, true);
-      for (const [key, value] of form) {
-        value = "";
+      const inputs = document.querySelector("form").elements;
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].value = "";
       }
     } else {
       alertWindow(resData.message, false);
