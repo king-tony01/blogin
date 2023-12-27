@@ -5,13 +5,13 @@ export function dashboard(articles, page) {
   });
   const totalLikes = likes.reduce((current, next) => {
     return current + next;
-  });
+  }, 0);
   const views = articles.map((article) => {
     return article.visits;
   });
   const totalViews = views.reduce((current, next) => {
     return current + next;
-  });
+  }, 0);
   page.innerHTML = `        <section class="dashboard">
           <h2>Dashboard</h2>
           <div class="overview">
