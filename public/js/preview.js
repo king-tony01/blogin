@@ -5,16 +5,20 @@ const hero = document.querySelector(".preview-hero");
 const content = document.querySelector(".content");
 const nextList = document.querySelector(".next-list");
 const article = await getArticle(id);
+console.log(article[0].content);
 document.querySelector("title").text = `BlogIn | ${article[0].title}`;
 document.querySelector('meta[name="description"]').content = article[0].intro;
 document.querySelector('meta[name="keywords"]').content = JSON.parse(
   article[0].keywords
 ).join(",");
+const formated = article[0].content.replace(/\n/g, "<br>");
+const formatedIntro = article[0].intro.replace(/\n/g, "<br>");
+const formatedTitle = article[0].title.replace(/\n/g, "<br>");
 hero.innerHTML = `<h1>
-          ${article[0].title}
+          ${formatedTitle}
         </h1>
         <p>
-         ${article[0].intro}
+         ${formatedIntro}
         </p>
         <div class="author-wrapper">
           <img src="${article[0].author_profile}" alt="" />
@@ -31,7 +35,7 @@ hero.innerHTML = `<h1>
           <a href="" class="share-btn" data-id="instagram"><i class="fab fa-twitter"></i> Share</a>
         </div>`;
 content.innerHTML = `<p>
-              ${article[0].content}
+              ${formated}
             </p>
             <div class="article-bottom-action">
               <strong
