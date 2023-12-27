@@ -51,6 +51,10 @@ export function editor(page, editor) {
                   <button id="publish">Publish</button>
                   <button id="discard">Discard</button>
                 </div>
+                <br/>
+          <br/>
+          <br/>
+
               </div>
             </form>
           </section>
