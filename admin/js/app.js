@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const clicked = tab.getAttribute("data-id");
       switch (clicked) {
         case "main-page":
-          window.open("http://127.0.0.1:5500/admin/html/page.html", "_blank");
+          window.open("https://blogin.cyclic.app/", "_blank");
           break;
         case "dashboard":
           dashboard(main, page);
