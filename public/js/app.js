@@ -38,7 +38,7 @@ async function init() {
     data.length > 0
       ? data
           .map((article) => {
-            return `<div class="latest-card">
+            return `<div class="latest-card" id="${article.id}">
           <span class="category">${article.category}</span>
           <h2>
            ${article.title}
@@ -55,6 +55,12 @@ async function init() {
           })
           .join(" ")
       : "";
+  const readBtn = document.querySelectorAll(".latest-card");
+  readBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      location.assign(`${location.origin}/article?id=${btn.id}`);
+    });
+  });
 }
 
 document.querySelector(".fa-bars").addEventListener("click", () => {

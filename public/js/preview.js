@@ -103,6 +103,10 @@ shareButtons.forEach((btn) => {
   });
 });
 
+document.querySelector(".tab").addEventListener("click", () => {
+  location.assign(`${location.origin}/`);
+});
+
 function shareOnInstagram() {
   // Instagram sharing links work best on mobile devices
   alert("Please open Instagram sharing on a mobile device.");

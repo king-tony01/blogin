@@ -4,39 +4,6 @@ const category = location.pathname.slice(1);
 const firstLetter = category.slice(0, 1).toUpperCase();
 const capitalizedName = firstLetter.concat(category.slice(1));
 document.querySelector("title").text = `BlogIn | ${capitalizedName}`;
-const categoryInfo = [
-  {
-    id: "life",
-    title: "Life",
-    intro:
-      "Discover articles that enrich your everyday life, covering topics from personal development to wellness and relationships.",
-  },
-  {
-    id: "inspiration",
-    title: "Inspiration",
-    intro:
-      "Fuel your passion and motivation with stories, interviews, and content that uplift and empower.",
-  },
-  {
-    id: "education",
-    title: "Education",
-    intro:
-      "Unlock the doors to knowledge with our educational content, featuring insights, tips, and resources for learners of all ages.",
-  },
-  {
-    id: "technology",
-    title: "Technology",
-    intro:
-      "Stay ahead in the digital age with the latest in tech trends, reviews, and guides.",
-  },
-];
-const hero = document.querySelector(".hero");
-hero.querySelector("h1").textContent = categoryInfo.find((cat) => {
-  return cat.id == category;
-}).title;
-hero.querySelector("p").textContent = categoryInfo.find((cat) => {
-  return cat.id == category;
-}).intro;
 const data = await getAllBasedOnCategory(category);
 container.innerHTML =
   data.length > 0
@@ -77,9 +44,47 @@ container.innerHTML =
         .join(" ")
     : "";
 
+const categoryInfo = [
+  {
+    id: "life",
+    title: "Life",
+    intro:
+      "Discover articles that enrich your everyday life, covering topics from personal development to wellness and relationships.",
+  },
+  {
+    id: "inspiration",
+    title: "Inspiration",
+    intro:
+      "Fuel your passion and motivation with stories, interviews, and content that uplift and empower.",
+  },
+  {
+    id: "education",
+    title: "Education",
+    intro:
+      "Unlock the doors to knowledge with our educational content, featuring insights, tips, and resources for learners of all ages.",
+  },
+  {
+    id: "technology",
+    title: "Technology",
+    intro:
+      "Stay ahead in the digital age with the latest in tech trends, reviews, and guides.",
+  },
+];
+const hero = document.querySelector(".hero");
+hero.querySelector("h1").textContent = categoryInfo.find((cat) => {
+  return cat.id == category;
+}).title;
+hero.querySelector("p").textContent = categoryInfo.find((cat) => {
+  return cat.id == category;
+}).intro;
+
 const readBtn = document.querySelectorAll(".read-btn");
 readBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     location.assign(`${location.origin}/article?id=${btn.id}`);
   });
+});
+
+document.querySelector(".tab").addEventListener("click", () => {
+  location.assign(`${location.origin}/`);
 });
