@@ -58,7 +58,7 @@ export function loginUI(page) {
     if (resData.stat) {
       alertWindow(resData.message, true);
       login.textContent = "Authorized";
-      location.assign(`${location.origin}/editor?id=${resData.id}`);
+      location.assign(`${location.origin}/home?id=${resData.id}`);
     } else {
       alertWindow(resData.message, false);
       login.textContent = "Login";
