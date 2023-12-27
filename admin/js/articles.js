@@ -1,5 +1,6 @@
 export function articles(articles, page) {
-  page.innerHTML = `<section class="articles">
+  if (articles.length > 0) {
+    page.innerHTML = `<section class="articles">
           <h2>Articles</h2>
           <div class="articles-con">
           ${articles
@@ -28,4 +29,14 @@ export function articles(articles, page) {
             .join(" ")}
           </div>
         </section>`;
+  } else {
+    page.innerHTML = `<section class="articles">
+          <h2>Articles</h2>
+          <div class="articles-con">
+          <br/>
+          <br/>
+          <p>No articles yet</p>
+          </div>
+        </section>`;
+  }
 }

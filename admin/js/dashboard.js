@@ -1,18 +1,19 @@
 import * as articleView from "./articles.js";
 export function dashboard(articles, page) {
-  const likes = articles.map((article) => {
-    return article.likes;
-  });
-  const totalLikes = likes.reduce((current, next) => {
-    return current + next;
-  }, 0);
-  const views = articles.map((article) => {
-    return article.visits;
-  });
-  const totalViews = views.reduce((current, next) => {
-    return current + next;
-  }, 0);
-  page.innerHTML = `        <section class="dashboard">
+  if (articles.length > 0) {
+    const likes = articles.map((article) => {
+      return article.likes;
+    });
+    const totalLikes = likes.reduce((current, next) => {
+      return current + next;
+    }, 0);
+    const views = articles.map((article) => {
+      return article.visits;
+    });
+    const totalViews = views.reduce((current, next) => {
+      return current + next;
+    }, 0);
+    page.innerHTML = `        <section class="dashboard">
           <h2>Dashboard</h2>
           <div class="overview">
             <div class="overview-card">
@@ -67,12 +68,40 @@ export function dashboard(articles, page) {
             </ul>
           </div>
         </section>`;
-  document.getElementById("see-all").addEventListener("click", () => {
-    articleView.articles(articles, page);
-    const tabs = document.querySelectorAll(".menu-tab");
-    tabs.forEach((tab) => {
-      tab.classList.remove("active");
+    document.getElementById("see-all").addEventListener("click", () => {
+      articleView.articles(articles, page);
+      const tabs = document.querySelectorAll(".menu-tab");
+      tabs.forEach((tab) => {
+        tab.classList.remove("active");
+      });
+      document.getElementById("articles").classList.add("active");
     });
-    document.getElementById("articles").classList.add("active");
-  });
+  } else {
+    page.innerHTML = ` <section class="dashboard">
+          <h2>Dashboard</h2>
+          <div class="overview">
+            <div class="overview-card">
+              <i class="fas fa-newspaper"></i>
+              <div>
+                <b>0</b>
+                <p>Total Articles</p>
+              </div>
+            </div>
+            <div class="overview-card">
+              <i class="fas fa-heart"></i>
+              <div>
+                <b>0</b>
+                <p>Total Likes</p>
+              </div>
+            </div>
+            <div class="overview-card">
+              <i class="fas fa-eye"></i>
+              <div>
+                <b>0</b>
+                <p>Total Visits</p>
+              </div>
+            </div>
+          </div>
+        </section>`;
+  }
 }
