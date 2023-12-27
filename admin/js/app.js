@@ -1,11 +1,12 @@
 import { articles } from "./articles.js";
 import { dashboard } from "./dashboard.js";
 import { editor } from "./editor.js";
-
+document.querySelector(".loader").classList.add("active");
 const page = document.querySelector(".page");
 let main = [];
 init();
 document.addEventListener("DOMContentLoaded", async () => {
+  document.querySelector(".loader").classList.remove("active");
   const nameHolder = document.getElementById("full-name");
   const emailHolder = document.getElementById("email");
   const imageHolder = document.getElementById("profile");

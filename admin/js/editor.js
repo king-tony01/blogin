@@ -62,9 +62,11 @@ export function editor(page, editor) {
   const discardBtn = document.getElementById("discard");
   publishBtn.addEventListener("click", async (e) => {
     e.preventDefault();
+    document.querySelector(".loader").classList.add("active");
     const form = new FormData(document.querySelector("form"));
     for (const [key, value] of form) {
       if (value == "") {
+        document.querySelector(".loader").classList.remove("active");
         alertWindow("Please provide all fields", false);
         return;
       }
@@ -91,17 +93,23 @@ export function editor(page, editor) {
     });
     const resData = await response.json();
     if (resData.stat) {
+      document.querySelector(".loader").classList.remove("active");
       alertWindow(resData.message, true);
       const inputs = document.querySelector("form").elements;
       for (let i = 0; i < inputs.length; i++) {
         inputs[i].value = "";
       }
     } else {
+      document.querySelector(".loader").classList.remove("active");
       alertWindow(resData.message, false);
     }
   });
   discardBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    const inputs = document.querySelector("form").elements;
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].value = "";
+    }
   });
 }
 
