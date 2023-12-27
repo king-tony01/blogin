@@ -1,0 +1,313 @@
+:root {
+    --primary: #b2533e;
+    --background: #ffffff;
+    --secondary: #186f65;
+    --onsecondary: #b5cb99;
+    --black: black;
+    --light: #f5f5f5;
+    --border: #d7d7d7;
+    --yellow: #fce09b;
+    --faint-text: #A1A1A1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media(min-width: 1024px){
+    img{
+        width: 200px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+    body{
+        display: grid;
+        grid-template-columns: 0.7fr 3.5fr;
+        gap: 50px;
+        height: 100vh;
+    }
+
+    nav{
+        background: var(--secondary);
+        padding: 20px;
+    }
+
+    .logo-top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-top h1{
+        color: var(--onsecondary);
+    }
+
+    .logo-top h1 span{
+        color: var(--primary);
+    }
+
+    .logo-top .fas{
+        font-size: 20px;
+        color: var(--background);
+    }
+
+    .profile-view{
+        display: flex;
+        align-items: center;
+    }
+
+    .profile-view img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin-right: 10px;
+    }
+
+    .profile-view b{
+        color: var(--background);
+    }
+
+    .profile-view .role{
+        display: block;
+        width: fit-content;
+        padding: 5px;
+        color: var(--secondary);
+        background: var(--onsecondary);
+        border-radius: 20px;
+        margin: 10px 0;
+    }
+
+    .navigation li{
+        list-style: none;
+        padding: 10px;
+        color: var(--background);
+        cursor: pointer;
+    }
+    .navigation li:hover{
+        border-radius: 20px;
+        background: var(--onsecondary);
+        color: var(--secondary);
+    }
+
+    .navigation li .fas{
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .nav-tabs.active{
+        border-radius: 20px;
+        background: var(--onsecondary);
+        color: var(--secondary);
+    }
+
+    main header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    .calendar{
+        display: flex;
+        align-items: center;
+    }
+
+    .calendar .fas{
+        font-size: 30px;
+        color: var(--secondary);
+        margin-right: 10px;
+    }
+
+    .day{
+        display: block;
+        color: var(--secondary);
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+    }
+
+    .search-field{
+        padding: 5px;
+        background: var(--light);
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-field input{
+        border: none;
+        background: none;
+        padding: 10px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .search-field button{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--background);
+        background: var(--primary);
+        border: none;
+        border-radius: 50%;
+    }
+
+    .search-field button:hover{
+        opacity: 0.7;
+    }
+
+    .notify{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--light);
+        position: relative;
+        margin: 0 15px;
+    }
+
+    .notice-counter{
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: red;
+        color: var(--background);
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .notify .fas{
+        font-size: 20px;
+        color: var(--secondary);
+    }
+
+    .language-selector{
+        padding: 18px;
+        border-radius: 30px;
+        background: var(--light);
+    }
+
+    .language-selector .fa-chevron-down{
+        display: inline-block;
+        margin-left: 10px;
+        color: var(--primary);
+    }
+
+    .dashboard{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+    }
+
+    .analytics-card-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .analytics-card{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.10);
+    }
+
+    .analytics-card span{
+        display: block;
+    }
+
+    .analytics-card b{
+        display: block;
+        margin: 5px 0;
+        color: var(--secondary);
+    }
+
+    .analytics-card .percent{
+        color: green;
+    }
+
+    .chart{
+        margin: 20px 0;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.10);
+        height: 300px;
+    }
+
+    .top-performing ul li{
+        display: flex;
+        align-items: flex-start;
+        list-style: none;
+        margin: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 3px 3px rgba(0,0,0,0.10);
+        padding: 10px;
+    }
+
+    .top-performing ul{
+        overflow-y: scroll;
+        height: 500px;
+        margin: 10px 0;
+    }
+
+    .top-performing ul li img{
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+
+    .title{
+        display: block;
+    }
+
+    .time{
+        color: var(--faint-text);
+        display: block;
+        margin: 5px 0;
+    }
+
+    .property{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+    }
+
+    .wrap{
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        padding: 10px;
+        border-radius: 20px;
+        background: var(--light);
+    }
+
+    .wrap .fas, .wrap small{
+        color: var(--secondary);
+    }
+
+    .wrap .fas{
+        margin-right: 5px;
+    }
+
+
+}

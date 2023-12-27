@@ -1,0 +1,153 @@
+:root {
+    --primary: #b2533e;
+    --background: #ffffff;
+    --secondary: #186f65;
+    --onsecondary: #b5cb99;
+    --black: black;
+    --light: #f5f5f5;
+    --border: #d7d7d7;
+    --yellow: #fce09b;
+    --faint-text: #A1A1A1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.users-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.users-button button{
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#add-user{
+    color: var(--background);
+    background: var(--primary);
+}
+
+#user-roles{
+    color: var(--primary);
+}
+
+.caption{
+    font-size: 20px;
+    color: var(--secondary);
+    margin: 10px 0;
+}
+
+.users-con{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.user-card{
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.user-card .fas{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--light);
+    color: var(--primary);
+}
+
+.user-card .fas:hover{
+    background: var(--border);
+}
+
+.user-card img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+}
+
+.user-card .user-role{
+    font-size: 20px;
+    color: var(--secondary);
+    display: block;
+    margin: 10px 0;
+}
+
+.user-card .username{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.user-card .user-email{
+    color: var(--faint-text);
+}
+
+.new-user{
+    margin: 20px 0;
+}
+
+.input-wrap{
+    margin: 20px 0;
+}
+
+.input-wrap p{
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.input-wrap input{
+    display: inline-block;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    background: var(--light);
+    margin-top: 10px;
+    outline: none;
+    width: 400px;
+}
+
+.new-user button{
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    padding: 10px 30px;
+    margin-right: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#add-now{
+    background: var(--primary);
+    color: var(--background);
+}
+
+#discard-now{
+    color: var(--background);
+    background: var(--black);
+}

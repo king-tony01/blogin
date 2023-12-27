@@ -1,0 +1,36 @@
+{
+  "name": "blogin",
+  "version": "1.0.0",
+  "description": "Stay informed and ahead of the curve with BlogIn, your ultimate source for timely insights and expert opinions on a range of topics.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/king-tony01/blogin.git"
+  },
+  "keywords": [
+    "Blog",
+    "Article"
+  ],
+  "author": "King Tony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/king-tony01/blogin/issues"
+  },
+  "homepage": "https://github.com/king-tony01/blogin#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^1.41.1",
+    "formidable": "^3.5.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.6.5"
+  }
+}

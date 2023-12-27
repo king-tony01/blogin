@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/fontawesome-free-6.3.0-web/css/all.css" />
+    <link rel="stylesheet" href="/private/css/dashboard.css" />
+    <link rel="stylesheet" href="/private/css/posts.css" />
+    <link rel="stylesheet" href="/private/css/editor.css" />
+    <link rel="stylesheet" href="/private/css/media.css" />
+    <link rel="stylesheet" href="/private/css/users.css" />
+    <title>BlogIn | Admin</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo-top">
+        <h1>Blog<span>In</span></h1>
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <br />
+      <div class="profile-view">
+        <img src="/public/images/politics.png" alt="" />
+        <div>
+          <b>King Tony</b>
+          <small class="role">Super Admin</small>
+        </div>
+      </div>
+      <br />
+      <ul class="navigation">
+        <li data-tab="dashboard" class="nav-tabs active">
+          <i class="fas fa-table-columns"></i> Dashboard
+        </li>
+        <li data-tab="posts" class="nav-tabs">
+          <i class="fas fa-newspaper"></i> Posts
+        </li>
+        <li data-tab="media" class="nav-tabs">
+          <i class="fas fa-folder"></i> Media
+        </li>
+        <li data-tab="comments" class="nav-tabs">
+          <i class="fas fa-comments"></i> Comments
+        </li>
+        <li data-tab="users" class="nav-tabs">
+          <i class="fas fa-users"></i> Users
+        </li>
+        <li data-tab="analytics" class="nav-tabs">
+          <i class="fas fa-chart-pie"></i> Analytics
+        </li>
+        <li data-tab="seo" class="nav-tabs">
+          <i class="fas fa-globe-africa"></i> SEO
+        </li>
+        <li data-tab="settings" class="nav-tabs">
+          <i class="fas fa-wrench"></i> Settings
+        </li>
+        <li data-tab="backup-restore" class="nav-tabs">
+          <i class="fas fa-cloud-arrow-up"></i> Backup & Restore
+        </li>
+        <li data-tab="support" class="nav-tabs">
+          <i class="fas fa-message"></i> Support
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <header>
+        <div class="calendar">
+          <i class="fas fa-calendar"></i>
+          <div>
+            <b class="day">TUESDAY</b
+            ><small class="date">OCTOBER 17, 2023</small>
+          </div>
+        </div>
+        <div class="right">
+          <div class="search-field">
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Search"
+            />
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="notify">
+            <i class="fas fa-bell"></i>
+            <span class="notice-counter">2</span>
+          </div>
+          <div class="language-selector">
+            <i class="fas fa-globe"></i>
+            <span class="selected-language">EN</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+      <section class="main-page"></section>
+    </main>
+    <script src="/private/js/app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+:root {
+    --primary: #b2533e;
+    --background: #ffffff;
+    --secondary: #186f65;
+    --onsecondary: #b5cb99;
+    --black: black;
+    --light: #f5f5f5;
+    --border: #d7d7d7;
+    --yellow: #fce09b;
+    --faint-text: #A1A1A1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.post-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.cat-tab button{
+    padding: 10px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#all{
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.action-tabs{
+    display: flex;
+    align-items: center;
+}
+
+.action-tabs .select{
+    padding: 10px;
+    border-radius: 30px;
+    color: var(--faint-text);
+    background: var(--light);
+}
+
+.action-tabs .select select{
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.action-tabs button{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#add-post{
+    color: var(--background);
+    background: var(--primary);
+}
+
+#manage-tags{
+    color: var(--primary);
+}
+
+.posts-con{
+    margin: 20px 0;
+    height: 450px;
+    overflow-y: scroll;
+}
+
+.posts-con .post-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    padding-right: 20px;
+}
+
+.wrapper{
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.10);
+    cursor: pointer;
+}
+
+.wrapper:hover{
+    opacity: .8;
+}
+
+.wrapper img{
+    border-radius: 20px;
+    margin-right: 10px;
+    width: 170px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.wrapper strong{
+    display: block;
+}
+
+.wrapper ul{
+    margin: 10px 0;
+}
+
+.wrapper ul li{
+    display: inline-block;
+    margin: 0 5px;
+    color: var(--onsecondary);
+}
+
+.wrapper .category{
+    padding: 10px;
+    border-radius: 20px;
+    background: var(--onsecondary);
+    color: var(--secondary);
+    width: fit-content;
+    margin-bottom: 10px;
+}
