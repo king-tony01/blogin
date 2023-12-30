@@ -418,7 +418,9 @@ img {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: 0.5s all;
-    min-width: 200px;
+    min-width: 250px;
+    min-height: 350px;
+    margin-right: 20px;
   }
 
   .about-wrapper {

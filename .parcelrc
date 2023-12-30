@@ -1,0 +1,9 @@
+{
+  "extends": "@parcel/config-default",
+  "entries": {
+    "public/html/index.html": "./public/html/index.html",
+    "public/html/preview.html": "./public/html/preview.html",
+    "public/html/category.html": "./public/html/category.html",
+    "admin/html/page.html": "./admin/html/page.html"
+  }
+}
